@@ -10,9 +10,9 @@ import { Page } from './../../interfaces/page';
 })
 export class GlobalNavbarComponent implements OnInit {
 	pages: Page[] = [
-		{ title: 'Home', link: '/' },
-		{ title: 'Discover', link: '/discover' },
-		{ title: 'Checkout', link: '/checkout' },
+		{ title: 'בית', link: '/' },
+		{ title: 'מובילים', link: '/discover' },
+		{ title: 'הוסף שם', link: '/checkout' },
 	];
 
 	constructor(private router: Router) {

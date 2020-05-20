@@ -25,7 +25,7 @@ export class ExampleComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.titleService.setTitle(`${(window as any).bkBaseTitle} | Example`);
+		this.titleService.setTitle(`${(window as any).bkBaseTitle} | דוגמא`);
 		this.exampleService.getInfo().subscribe((info: any) => {
 			this.info = info.status;
 		});
@@ -33,7 +33,7 @@ export class ExampleComponent implements OnInit {
 
 	addEvent(eventName: string, eventCategory: string, eventAction: string, eventLabel?: string, eventValue?: number) {
 		this.googleAnalyticsEventsService.eventEmmiter(eventName, eventCategory, eventAction, eventLabel, eventValue);
-		this.alertsService.addToast('bla bla');
+		this.alertsService.addToast('מה ניש');
 	}
 
 }

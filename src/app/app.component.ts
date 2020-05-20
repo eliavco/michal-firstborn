@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
 	}
 
 	ngOnInit(): void {
-		(window as any).bkBaseTitle = 'The Baby Of Michal';
+		(window as any).bkBaseTitle = 'התינוק של מיכל';
 	}
 
 }
