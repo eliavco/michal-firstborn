@@ -11,7 +11,7 @@ const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 const compression = require('compression');
 
-const bikeRouter = require('./routes/bikeRoutes');
+const babyRouter = require('./routes/babyRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const setUpModels = require('./models/model');
@@ -101,7 +101,7 @@ app.get('/try', async (req, res) => {
 	res.status(200).json({ status: 'OK' });
 });
 
-app.use('/bikes', bikeRouter);
+app.use('/babies', babyRouter);
 
 app.all('/*', async (req, res, next) => {
 	next(new AppError(`The URL path ${req.originalUrl} was not found`, 404));

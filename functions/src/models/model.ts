@@ -1,7 +1,7 @@
-const { Bike } = require('./bikeModel');
+const { Baby } = require('./babyModel');
 
 module.exports = () => {
 	return {
-		bikes: Bike
+		babies: Baby
 	};
 };

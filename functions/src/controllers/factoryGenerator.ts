@@ -119,14 +119,14 @@ exports.update = (resource: string) => {
 	}));
 };
 
-exports.updateStock = (resource: string) => {
+exports.updateRating = (resource: string) => {
 	return catchAsync((async (req: any, res: any, next: any) => {
 		const id = req.params.id;
 		const document = await req.dbm[resource].getById(id);
 		if (!document) return next(new AppErrorF(`Could not find document with id: ${id}`));
-		let number = -1;
+		let number = 1;
 		if (req.query.delta) number = req.query.delta * 1;
-		document.stock += number;
+		document.rating += number;
 		await document.save();
 		res.status(200).json({
 			status: 'success',
@@ -152,7 +152,7 @@ exports.getDownloadableLink = (resource: string) => {
 		const document = await req.dbm[resource].getById(id);
 		if (!document) return next(new AppErrorF(`Could not find document with id: ${id}`));
 		const image = document.image;
-		const url = (await req.st.file(`bikes/${image}.jpg`).getSignedUrl({
+		const url = (await req.st.file(`babies/${image}.jpg`).getSignedUrl({
 			action: 'read',
 			expires: (new Date().getTime()) + 5 * 24 * 60 * 60 * 1000,
 			virtualHostedStyle: true,
