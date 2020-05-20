@@ -31,6 +31,10 @@ class BabyModel extends Model {
 		return babySchema;
 	}
 
+	static async getByName(name: string){
+		return await this.getBy('name', name);
+	}
+
 	toJSON() {
 		return {
 			id: this._id, // ID of Document stored in Cloud Firestore

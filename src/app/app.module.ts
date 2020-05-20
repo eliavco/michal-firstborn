@@ -15,11 +15,13 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { GoogleAnalyticsEventsService } from './services/GoogleAnalyticsEvents/GoogleAnalyticsEvents.service';
 import { ExampleService } from './services/example/example.service';
 import { AlertsService } from './services/alerts/alerts.service';
+import { BabiesService } from './services/babies/babies.service';
 
 // Components
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GlobalNavbarComponent } from './components/global-navbar/global-navbar.component';
 import { AlertsComponent } from './components/alerts/alerts.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
 	declarations: [
@@ -27,7 +29,8 @@ import { AlertsComponent } from './components/alerts/alerts.component';
 		ExampleComponent,
 		NotFoundComponent,
 		GlobalNavbarComponent,
-		AlertsComponent
+		AlertsComponent,
+		HomeComponent
 	],
 	imports: [
 		BrowserModule,
@@ -42,7 +45,8 @@ import { AlertsComponent } from './components/alerts/alerts.component';
 		GoogleAnalyticsEventsService,
 		Title,
 		ExampleService,
-		AlertsService
+		AlertsService,
+		BabiesService,
 	],
 	bootstrap: [
 		AppComponent

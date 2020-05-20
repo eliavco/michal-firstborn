@@ -39,6 +39,7 @@ exports.resizePhoto = catchAsyncC(async (req: any, res: any, next: Function) => 
 exports.getAllBabies = factory.getAll('babies');
 
 exports.getBaby = factory.getById('babies');
+exports.getBabyName = factory.getByName('babies');
 
 exports.createBaby = factory.create('babies');
 

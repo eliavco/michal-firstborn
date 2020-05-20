@@ -69,6 +69,13 @@ exports.getAll = (resource: string) => {
 		const snapshot = await query.get();
 		const documents: [any?] = [];
 		snapshot.forEach((doc: any) => documents.push(doc.data()));
+		let currentDoc;
+		for (const document of documents) {
+			currentDoc = (await req.dbm[resource].getByName(document.name)).toJSON();
+			document.id = currentDoc.id;
+			document.createdAt = currentDoc.createdAt;
+			document.updatedAt = currentDoc.updatedAt;
+		}
 		res.status(200).json({
 			status: 'success',
 			resource,
@@ -94,6 +101,19 @@ exports.getById = (resource: string) => {
 		const id = req.params.id;
 		const document = await req.dbm[resource].getById(id);
 		if (!document) return next(new AppErrorF(`Could not find document with id: ${id}`));
+		res.status(200).json({
+			status: 'success',
+			resource,
+			data: document.toJSON()
+		});
+	}));
+};
+
+exports.getByName = (resource: string) => {
+	return catchAsync((async (req: any, res: any, next: any) => {
+		const name = req.params.name;
+		const document = await req.dbm[resource].getByName(name);
+		if (!document) return next(new AppErrorF(`Could not find document with name: ${name}`));
 		res.status(200).json({
 			status: 'success',
 			resource,
