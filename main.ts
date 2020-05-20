@@ -24,13 +24,13 @@ function createWindow() {
 		//   preload: path.join(__dirname, "preload.js"),
 		// },
 		width: 800,
-		icon: path.join(__dirname, '/dist/bookbike/assets/logos/logo-transparent-color-wheel.png'),
+		icon: path.join(__dirname, '/dist/michalsfirst/assets/logos/logo.png'),
 	});
 
 	// and load the index.html of the app.
 	mainWindow.loadURL(
 		url.format({
-			pathname: path.join(__dirname, '/dist/bookbike/index.html'),
+			pathname: path.join(__dirname, '/dist/michalsfirst/index.html'),
 			protocol: 'file:',
 			slashes: true
 		})

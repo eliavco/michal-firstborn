@@ -1,5 +1,5 @@
 {
- "name": "bookbike",
+ "name": "michalfirst",
  "version": "0.0.0",
  "main": "main.js",
  "author": "Eliav Cohen",
@@ -67,7 +67,7 @@
   "typescript": "~3.8.3"
  },
  "build": {
-  "appId": "com.eliavco.bookbikedesktop",
+  "appId": "com.eliavco.michalsfirstdesktop",
   "directories": {
    "output": "dist/desktop"
   }
