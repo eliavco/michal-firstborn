@@ -11,7 +11,7 @@ declare let mgaids: Array<string>;
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-	title = 'bookbike';
+	title = 'michalsfirstborn';
 
 	constructor(public router: Router) {
 		this.router.events.subscribe(event => {
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
 	}
 
 	ngOnInit(): void {
-		(window as any).bkBaseTitle = 'Bookbike';
+		(window as any).bkBaseTitle = 'The Baby Of Michal';
 	}
 
 }
