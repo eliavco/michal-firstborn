@@ -26,7 +26,7 @@ export class DiscoverComponent implements OnInit {
 	}
 
 	alertVoted() {
-		if (!localStorage.vL) { localStorage.vL = 4; localStorage.ul = Date.now() }
+		if (!localStorage.vL) { localStorage.vL = 4; localStorage.ul = Date.now(); }
 		else if (+localStorage.vL <= 0) {}
 		else { localStorage.vL = +localStorage.vL - 1; }
 		this.alertsService.addToast(`הצבעתך התקבלה! נותרו ${localStorage.vL} הצבעות`, false, 5);
@@ -50,6 +50,7 @@ export class DiscoverComponent implements OnInit {
 	}
 
 	checkNotSelf(id) {
+		if (!localStorage.cy) { localStorage.cy = JSON.stringify([]); }
 		const mcy = JSON.parse(localStorage.cy);
 		return (!mcy.includes(id));
 	}
