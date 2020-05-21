@@ -8,3 +8,11 @@ abe-header {
 	}
   }
 }
+
+.bg-main {
+	padding: 3rem;
+
+	@media (max-width: map-get($grid-breakpoints, sm)) {
+		padding: 1.3rem;
+	}
+}

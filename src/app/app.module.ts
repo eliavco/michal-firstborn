@@ -24,6 +24,9 @@ import { AlertsComponent } from './components/alerts/alerts.component';
 import { HomeComponent } from './components/home/home.component';
 import { DiscoverComponent } from './components/discover/discover.component';
 import { NewNameComponent } from './components/new-name/new-name.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { PodiumComponent } from './components/podium/podium.component';
+import { PhotosParentsComponent } from './components/photos-parents/photos-parents.component';
 
 @NgModule({
 	declarations: [
@@ -34,7 +37,10 @@ import { NewNameComponent } from './components/new-name/new-name.component';
 		AlertsComponent,
 		HomeComponent,
 		DiscoverComponent,
-		NewNameComponent
+		NewNameComponent,
+		WelcomeComponent,
+		PodiumComponent,
+		PhotosParentsComponent
 	],
 	imports: [
 		BrowserModule,
