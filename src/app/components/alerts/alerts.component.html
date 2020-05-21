@@ -1,4 +1,4 @@
-<div style="position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
+<div style="position: fixed; bottom: 1rem; left: 1rem; z-index: 999;">
 
 	<div *ngFor="let toast of alertsService.toasts" class="toast" id="{{'toast-id-' + toast.id}}" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
 		<div class="toast-header" [class.toast-red]="toast.alert">

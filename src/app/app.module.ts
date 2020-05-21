@@ -1,5 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -50,6 +51,8 @@ import { PhotosParentsComponent } from './components/photos-parents/photos-paren
 		LoadingBarHttpModule,
 		LoadingBarRouterModule,
 		FontAwesomeModule,
+		ReactiveFormsModule,
+		FormsModule,
 	],
 	providers: [
 		GoogleAnalyticsEventsService,
