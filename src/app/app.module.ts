@@ -22,6 +22,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GlobalNavbarComponent } from './components/global-navbar/global-navbar.component';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { HomeComponent } from './components/home/home.component';
+import { DiscoverComponent } from './components/discover/discover.component';
+import { NewNameComponent } from './components/new-name/new-name.component';
 
 @NgModule({
 	declarations: [
@@ -30,7 +32,9 @@ import { HomeComponent } from './components/home/home.component';
 		NotFoundComponent,
 		GlobalNavbarComponent,
 		AlertsComponent,
-		HomeComponent
+		HomeComponent,
+		DiscoverComponent,
+		NewNameComponent
 	],
 	imports: [
 		BrowserModule,

@@ -24,19 +24,19 @@ export class HomeComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.titleService.setTitle(`${(window as any).bkBaseTitle} | בית`);
-		this.babiesService.getInfoRating().subscribe((info: any) => {
-			this.info = JSON.stringify(info);
+		// this.titleService.setTitle(`${(window as any).bkBaseTitle} | בית`);
+		// this.babiesService.getInfoRating().subscribe((info: any) => {
+		// 	this.info = JSON.stringify(info);
 			// this.babiesService.increaseRating(JSON.parse(this.info).documents[0].id, -1).subscribe();
 			// this.babiesService.create('jaajkh', 'akd', 'as', '2020').subscribe((result: any) => {
 			// 	console.log(result);
 			// });
-		});
+		// });
 	}
 
 	addEvent(eventName: string, eventCategory: string, eventAction: string, eventLabel?: string, eventValue?: number) {
-		this.googleAnalyticsEventsService.eventEmmiter(eventName, eventCategory, eventAction, eventLabel, eventValue);
-		this.alertsService.addToast('מה ניש');
+		// this.googleAnalyticsEventsService.eventEmmiter(eventName, eventCategory, eventAction, eventLabel, eventValue);
+		// this.alertsService.addToast('מה ניש');
 	}
 
 }

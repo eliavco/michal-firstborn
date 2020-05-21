@@ -12,7 +12,7 @@ export class GlobalNavbarComponent implements OnInit {
 	pages: Page[] = [
 		{ title: 'בית', link: '/' },
 		{ title: 'מובילים', link: '/discover' },
-		{ title: 'הוסף שם', link: '/checkout' },
+		{ title: 'הוסף שם', link: '/new-name' },
 	];
 
 	constructor(private router: Router) {
