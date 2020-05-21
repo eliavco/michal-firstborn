@@ -1,3 +1,27 @@
 <div class="bg-main">
-	<p>discover works!</p>
+	<div class="lead">לגולשים בטלפון, שימו לב שכפתורי ההצבעה נמצאים בצד ימין.<br/>לכל אחד מכם יש עד חמש הצבעות, כרגע אין אפשרות להחליף הצבעה. לכן, שקלו בחוכמה מתי ואיך אתם מצביעים... אולי עדיף לחכות שהשמות הטובים יוצעו</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">השם המוצע</th>
+				<th scope="col">מציע השם</th>
+				<th scope="col">קבוצה</th>
+				<th scope="col">סיבה</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let document of info">
+				<ng-container *ngIf="checkNotSelf(document.id)">
+					<th scope="row">{{ document.rating }}</th>
+					<td>{{ document.name }}</td>
+					<td>{{ document.author }}</td>
+					<td>{{ document.group }}</td>
+					<td>{{ document.reason }}</td>
+					<td><button type="button" (click)="vote(document.id)" class="btn btn-primary">הצבע לשם זה</button></td>
+				</ng-container>
+			</tr>
+		</tbody>
+	</table>
 </div>

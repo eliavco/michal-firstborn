@@ -28,6 +28,8 @@ import { NewNameComponent } from './components/new-name/new-name.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PodiumComponent } from './components/podium/podium.component';
 import { PhotosParentsComponent } from './components/photos-parents/photos-parents.component';
+import { RulesComponent } from './components/rules/rules.component';
+import { ConfettiComponent } from './components/confetti/confetti.component';
 
 @NgModule({
 	declarations: [
@@ -41,7 +43,9 @@ import { PhotosParentsComponent } from './components/photos-parents/photos-paren
 		NewNameComponent,
 		WelcomeComponent,
 		PodiumComponent,
-		PhotosParentsComponent
+		PhotosParentsComponent,
+		RulesComponent,
+		ConfettiComponent
 	],
 	imports: [
 		BrowserModule,

@@ -33,6 +33,10 @@ export class NewNameComponent implements OnInit {
 	createBaby(name, author, reason, group) {
 		this.babiesService.create(name, author, reason, group).subscribe((result: any) => {
 			this.result = result;
+			if (!localStorage.cy) { localStorage.cy = JSON.stringify([]); }
+			const mcy = JSON.parse(localStorage.cy);
+			mcy.push(this.result.data.id);
+			localStorage.cy = JSON.stringify(mcy);
 			this.alertCreated();
 		}, (error: any) => {
 			this.result = error;

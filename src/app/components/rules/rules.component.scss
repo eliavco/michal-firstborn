@@ -2,9 +2,13 @@
 
 .bg-main {
 	padding: 3rem;
-	overflow: scroll;
+	font-size: 120%;
 
 	@media (max-width: map-get($grid-breakpoints, sm)) {
 		padding: 1.3rem;
 	}
+}
+
+.display-4 {
+	overflow: visible;
 }

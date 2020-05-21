@@ -21,6 +21,11 @@ body {
 	overflow-x: hidden;
 }
 
+::selection {
+	background-color: var(--indigo);
+	color: #fff;
+}
+
 .user-select-none {
 	-moz-user-select: none;
 	-webkit-user-select: none;
