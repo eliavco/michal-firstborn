@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { BabiesService } from './../../services/babies/babies.service';
 import { AlertsService } from './../../services/alerts/alerts.service';
 
+import { faThumbsUp, faThumbsDown, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
 	selector: 'bk-discover',
 	templateUrl: './discover.component.html',
@@ -11,6 +13,9 @@ import { AlertsService } from './../../services/alerts/alerts.service';
 })
 export class DiscoverComponent implements OnInit {
 	info;
+	faThumbsUp = faThumbsUp;
+	faThumbsDown = faThumbsDown;
+	faTrashAlt = faTrashAlt;
 
 	constructor(
 		private titleService: Title,
