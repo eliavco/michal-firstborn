@@ -7,3 +7,11 @@
 .display-4 {
 	overflow: visible;
 }
+
+.btn {
+	margin-left: 2rem;
+
+	&:last-child {
+		margin-left: 0;
+	}
+}

@@ -24,6 +24,10 @@ export class BabiesService {
 		return this.httpClient.put(`${backendUrl}/webApi/api/v1/babies/${id}?delta=${delta}`, null);
 	}
 
+	delete(id) {
+		return this.httpClient.delete(`${backendUrl}/webApi/api/v1/babies/${id}`);
+	}
+
 	create(name, author = '', reason = '', group = '') {
 		return this.httpClient.post(`${backendUrl}/webApi/api/v1/babies/`, { name, author, reason, group, rating: 0 });
 	}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { BabiesService } from './../../services/babies/babies.service';
@@ -24,6 +25,7 @@ export class NewNameComponent implements OnInit {
 		private titleService: Title,
 		private babiesService: BabiesService,
 		private alertsService: AlertsService,
+		private router: Router,
 	) { }
 
 	ngOnInit(): void {
@@ -38,6 +40,7 @@ export class NewNameComponent implements OnInit {
 			mcy.push(this.result.data.id);
 			localStorage.cy = JSON.stringify(mcy);
 			this.alertCreated();
+			this.router.navigate(['/discover']);
 		}, (error: any) => {
 			this.result = error;
 			this.alertCreated();

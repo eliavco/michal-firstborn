@@ -1,5 +1,5 @@
 <div class="bg-main">
-	<div class="lead">לגולשים בטלפון, שימו לב שכפתורי ההצבעה נמצאים בצד שמאל.<br/>לכל אחד מכם יש עד חמש הצבעות, כרגע אין אפשרות להחליף הצבעה. לכן, שקלו בחוכמה מתי ואיך אתם מצביעים... אולי עדיף לחכות שהשמות הטובים יוצעו</div>
+	<div class="lead">לגולשים בטלפון, שימו לב שכפתורי ההצבעה נמצאים בצד שמאל ויכול להיות שיהיו מוסתרים</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -19,7 +19,15 @@
 				<td>{{ document.group }}</td>
 				<td>{{ document.reason }}</td>
 				<ng-container *ngIf="checkNotSelf(document.id)">
-					<td><button type="button" (click)="vote(document.id)" class="btn btn-primary">הצבע לשם זה</button></td>
+					<ng-container *ngIf="checkNotVoted(document.id)">
+						<td><button type="button" (click)="vote(document.id)" class="btn btn-primary">הצבע לשם זה</button></td>
+					</ng-container>
+					<ng-container *ngIf="!checkNotVoted(document.id)">
+						<td><button type="button" (click)="unvote(document.id)" class="btn btn-warning">בטל הצבעה</button></td>
+					</ng-container>
+				</ng-container>
+				<ng-container *ngIf="!checkNotSelf(document.id)">
+					<td><button type="button" (click)="delete(document.id)" class="btn btn-danger">מחק שם זה</button></td>
 				</ng-container>
 			</tr>
 		</tbody>
