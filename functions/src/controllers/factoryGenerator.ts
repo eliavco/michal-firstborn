@@ -43,7 +43,7 @@ const makeQuery = (req: any) => (reference: any) => {
 			ref = ref.orderBy(orderByParamFormatted, desc ? 'desc' : 'asc');
 		}
 	}
-	let limitNum = 10, page;
+	let limitNum = 10000, page;
 	if (+req.query.limit) limitNum = +req.query.limit;
 	if (req.query.page) page = req.query.page;
 	if (+req.query.page) page = +req.query.page;

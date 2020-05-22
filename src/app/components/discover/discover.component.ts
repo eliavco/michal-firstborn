@@ -27,6 +27,7 @@ export class DiscoverComponent implements OnInit {
 		this.titleService.setTitle(`${(window as any).bkBaseTitle} | טבלת מובילים`);
 		this.babiesService.getInfoRating().subscribe((info: any) => {
 			this.info = info.documents;
+			console.log(this.info);
 		});
 	}
 
