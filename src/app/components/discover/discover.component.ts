@@ -27,21 +27,22 @@ export class DiscoverComponent implements OnInit {
 		this.titleService.setTitle(`${(window as any).bkBaseTitle} | טבלת מובילים`);
 		this.babiesService.getInfoRating().subscribe((info: any) => {
 			this.info = info.documents;
-			console.log(this.info);
 		});
+		this.launchTimer();
 	}
 
 	alertVoted() {
 		if (!localStorage.vL) { localStorage.vL = 4; localStorage.ul = Date.now(); }
 		else if (+localStorage.vL <= 0) {}
 		else { localStorage.vL = +localStorage.vL - 1; }
-		this.alertsService.addToast(`הצבעתך התקבלה! נותרו ${localStorage.vL} הצבעות`, false, 5);
+		this.alertsService.addToast(`הצבעתך התקבלה!`, false, 5);
 	}
 
 	alertUnvoted() {
 		if (!localStorage.vL) { localStorage.vL = 4; localStorage.ul = Date.now(); }
 		else { localStorage.vL = +localStorage.vL + 1; }
-		this.alertsService.addToast(`הצבעתך בוטלה! נותרו ${localStorage.vL} הצבעות`, false, 5);
+		this.alertsService.addToast(`הצבעתך בוטלה!`, false, 5);
+		// this.alertsService.addToast(`הצבעתך בוטלה! נותרו ${localStorage.vL} הצבעות`, false, 5);
 	}
 
 	alertVotedComplete() {
@@ -49,7 +50,7 @@ export class DiscoverComponent implements OnInit {
 	}
 
 	vote(id) {
-		if (+localStorage.vL > 0 || !localStorage.vL) {
+		// if (+localStorage.vL > 0 || !localStorage.vL) {
 			this.babiesService.increaseRating(id).subscribe((val: any) => {
 				if (!localStorage.vv) { localStorage.vv = JSON.stringify([]); }
 				const mvv = JSON.parse(localStorage.vv);
@@ -60,9 +61,9 @@ export class DiscoverComponent implements OnInit {
 					this.info = info.documents;
 				});
 			});
-		} else {
-			this.alertVotedComplete();
-		}
+		// } else {
+			// this.alertVotedComplete();
+		// }
 	}
 
 	unvote(id) {
@@ -103,6 +104,36 @@ export class DiscoverComponent implements OnInit {
 				this.info = info.documents;
 			});
 		});
+	}
+
+	launchTimer() {
+		// Set the date we're counting down to
+		const countDownDate = new Date('Jun 12, 2020 10:00:00').getTime();
+
+		// Update the count down every 1 second
+		const x = setInterval(() => {
+
+			// Get today's date and time
+			const now = new Date().getTime();
+
+			// Find the distance between now and the count down date
+			const distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes and seconds
+			const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Display the result in the element with id="demo"
+			document.getElementById('timer').innerHTML = `נותרו ${days} ימים, ${hours} שעות, ${minutes} דקות, ${seconds} שניות.`;
+
+			// If the count down is finished, write some text
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById('timer').innerHTML = 'התחרות נגמרה';
+			}
+		}, 1000);
 	}
 
 }
