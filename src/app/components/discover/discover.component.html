@@ -19,16 +19,18 @@
 				<td>{{ document.author }}</td>
 				<td>{{ document.group }}</td>
 				<td>{{ document.reason }}</td>
-				<ng-container *ngIf="checkNotSelf(document.id)">
-					<ng-container *ngIf="checkNotVoted(document.id)">
-						<td><button type="button" (click)="vote(document.id)" class="btn btn-primary"><fa-icon [icon]="faThumbsUp" size="lg"></fa-icon></button></td>
+				<ng-container *ngIf="this.running">
+					<ng-container *ngIf="checkNotSelf(document.id)">
+						<ng-container *ngIf="checkNotVoted(document.id)">
+							<td><button type="button" (click)="vote(document.id)" class="btn btn-primary"><fa-icon [icon]="faThumbsUp" size="lg"></fa-icon></button></td>
+						</ng-container>
+						<ng-container *ngIf="!checkNotVoted(document.id)">
+							<td><button type="button" (click)="unvote(document.id)" class="btn btn-warning"><fa-icon [icon]="faThumbsDown" size="lg"></fa-icon></button></td>
+						</ng-container>
 					</ng-container>
-					<ng-container *ngIf="!checkNotVoted(document.id)">
-						<td><button type="button" (click)="unvote(document.id)" class="btn btn-warning"><fa-icon [icon]="faThumbsDown" size="lg"></fa-icon></button></td>
+					<ng-container *ngIf="!checkNotSelf(document.id)">
+						<td><button type="button" (click)="delete(document.id)" class="btn btn-danger"><fa-icon [icon]="faTrashAlt" size="lg"></fa-icon></button></td>
 					</ng-container>
-				</ng-container>
-				<ng-container *ngIf="!checkNotSelf(document.id)">
-					<td><button type="button" (click)="delete(document.id)" class="btn btn-danger"><fa-icon [icon]="faTrashAlt" size="lg"></fa-icon></button></td>
 				</ng-container>
 			</tr>
 		</tbody>

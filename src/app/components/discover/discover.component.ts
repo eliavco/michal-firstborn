@@ -16,6 +16,7 @@ export class DiscoverComponent implements OnInit {
 	faThumbsUp = faThumbsUp;
 	faThumbsDown = faThumbsDown;
 	faTrashAlt = faTrashAlt;
+	running = true;
 
 	constructor(
 		private titleService: Title,
@@ -132,6 +133,7 @@ export class DiscoverComponent implements OnInit {
 			if (distance < 0) {
 				clearInterval(x);
 				document.getElementById('timer').innerHTML = 'התחרות נגמרה';
+				this.running = false;
 			}
 		}, 1000);
 	}
